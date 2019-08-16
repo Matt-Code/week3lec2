@@ -43,6 +43,16 @@ app.get("/wiki/:keyword/fit2095/:id", function (req, res) {
 
 });
 
+//http://localhost:8080/report?name=Tim&age=24&address=Mel&postcode=3000&weather=cloudy
+//this will convert all the things in the query in the url into key-value pairs
+app.get("/report", function(req,res){
+    console.log(req.url);
+    console.log(req.query);
+
+    console.log("the name is ==" + req.query.name);
+    console.log("the age is == "+ req.query.age);
+});
+
 //if a request comes to the below pathname, execute the function below
 app.get("/about", function (req, res) {
     //the response to reply to the client
